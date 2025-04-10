@@ -1,0 +1,101 @@
+The quick brown fox jumps over the lazy dog.
+She sells seashells by the seashore.
+All that glitters is not gold.
+To be or not to be, that is the question.
+It was the best of times, it was the worst of times.
+Hello.
+Stop!
+Why?
+Run.
+Yes.
+The Metropolitan Museum of Art in New York City, often simply called "the Met," is the largest art museum in the United States and one of the most visited art museums in the world, housing an extensive collection of artwork spanning 5,000 years of world culture, from prehistory to the present.
+According to all known laws of aviation, there is no way a bee should be able to fly, but the bee flies anyway because bees don't care what humans think is impossible.
+The mitochondria is the powerhouse of the cell, responsible for producing adenosine triphosphate (ATP) through the process of cellular respiration, which provides the necessary energy for various cellular functions and metabolic processes.
+What time is it?
+Have you ever seen the rain coming down on a sunny day?
+Why did the chicken cross the road?
+Who let the dogs out?
+How much wood would a woodchuck chuck if a woodchuck could chuck wood?
+Close the door.
+Please pass the salt.
+Don't touch that button.
+Remember to call your mother.
+Turn left at the next intersection.
+¿Dónde está la biblioteca?
+C'est la vie, mon ami.
+Ich bin ein Berliner.
+Всем привет, как дела?
+你好，我叫克劳德。
+There are 365 days in a year, except for leap years which have 366.
+The password is P@ssw0rd!123.
+My phone number is (123) 456-7890.
+He won the lottery and received $1,000,000.
+The meeting is scheduled for 9:30 AM on 2/15/2023.
+Help!!!
+Wait... what?
+She said, "I'm not going," and walked away.
+This sentence has no ending
+This—as you might have guessed—is a sentence with em dashes.
+.
+,
+sentence
+This is not a word: bordle.
+a
+tHiS iS a WeIrD wAy To WrItE a SeNtEnCe.
+PLEASE DON'T SHOUT AT ME.
+this sentence has no capital letters or punctuation
+ThIs SenTenCe HaS MixEd CaPiTaLiZaTiOn AnD nO pUnCtUaTiOn
+*This sentence is emphasized* with markdown.
+She said, "I'm going to the store."
+He exclaimed, "She told me, 'I don't want to go,' but I insisted!"
+The sign read: "WARNING: Do not enter if you see the message 'System Failure'."
+"To quote Einstein, 'Imagination is more important than knowledge,'" said the professor.
+She whispered, "Did he just say, 'I know what you did last summer'?"
+The algorithm has a time complexity of O(n log n).
+SELECT * FROM users WHERE age > 18 ORDER BY name ASC;
+The HTTP 404 error indicates that the requested resource could not be found.
+def fibonacci(n): return fibonacci(n-1) + fibonacci(n-2) if n > 1 else n
+The XML DOCTYPE declaration should precede the root element.
+I'm so happy today! 😊
+That movie was terrible 👎
+¯\_(ツ)_/¯
+(╯°□°)╯︵ ┻━┻
+🔥 This new album is fire! 🔥
+Time flies like an arrow; fruit flies like a banana.
+The complex houses married and single soldiers and their families.
+The cotton clothing is made of grows in Mississippi.
+The horse raced past the barn fell.
+The old man the boat.
+If you want to.
+Because I said so.
+Yesterday I to the store.
+Me go now bye.
+Very important meeting cancel not.
+Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.
+That that is is that that is not is not is that it it is.
+Rose rose to put rose roes on her rows of roses.
+Will Will will Will's will to Will?
+She said that that that that that person used was incorrect.
+Colorless green ideas sleep furiously.
+The toaster danced with eloquent vegetables.
+Triangular dreams evaporate sideways.
+Yesterday's tomorrow never arrives punctually.
+Ferocious dictionaries climb silently.
+Pneumonoultramicroscopicsilicovolcanoconiosis is a lung disease.
+Antidisestablishmentarianism was a political position.
+I am.
+The supercalifragilisticexpialidocious performance amazed everyone.
+Go!
+<div class="container">This looks like HTML.</div>
+console.log("This looks like code");
+.my-class { color: red; font-size: 16px; }
+if (x > 0) { return true; } else { return false; }
+<!-- This comment should be preserved -->
+Please visit https://www.example.com for more information.
+Send your application to jobs@example.org.
+My blog is at http://www.myblog.com/posts/2023/05/hello-world.
+Follow me on social media @username.
+For support, contact support@company.co.uk or call 1-800-HELP-NOW.
+This sentence
+continues on 
+multiple lines.
