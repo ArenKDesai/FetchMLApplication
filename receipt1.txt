@@ -1,0 +1,18 @@
+GROCERY MART
+123 Main Street
+New York, NY 10001
+2025-04-10 14:32:45
+--------------------
+Apples (2.5 lbs)        $4.99
+Milk (1 gallon)         $3.75
+Bread                   $2.49
+Eggs (dozen)            $3.29
+Cheese                  $5.99
+--------------------
+Subtotal:              $20.51
+Tax (8.875%):           $1.82
+Total:                 $22.33
+--------------------
+PAID: Credit Card *1234
+THANK YOU FOR SHOPPING!
+Receipt #: GM-45678

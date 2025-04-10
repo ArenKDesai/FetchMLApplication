@@ -1,0 +1,19 @@
+CORNER CAFE
+456 Oak Avenue
+San Francisco, CA 94110
+April 10, 2025 - 10:15 AM
+Server: Michael
+--------------------
+Latte                   $4.50
+Croissant               $3.25
+Avocado Toast           $9.95
+Fresh Orange Juice      $4.75
+--------------------
+Subtotal:              $22.45
+Tax (8.5%):             $1.91
+Tip (18%):              $4.04
+Total:                 $28.40
+--------------------
+PAID: Mobile Payment
+THANK YOU! PLEASE VISIT AGAIN!
+Order #: CC-78921

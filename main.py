@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from task1 import encode_sentence
+from task1 import embed_sentences
 
 def main():
     # Arguments
@@ -16,7 +16,9 @@ def main():
     
     # Task 1
     print("    ----    TASK 1    ----    ")
-    encode_sentence(args.sentence, args.file)
+    embeds = embed_sentences(args.sentence, args.file)
+
+    # Task 2
 
 if __name__ == "__main__":
     main()
