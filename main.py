@@ -20,7 +20,7 @@ def main():
     sentence_embeddings, attention_weights = embed_sentences(args.sentence, args.file)
 
     # Task 2
-    print("    ----    TASK 2    ----    ")
+    print("\n\n    ----    TASK 2    ----    ")
     _ = classify_recognize(args.sentence, args.file, args.sentence_classification, args.named_entity_recognition)
 
 if __name__ == "__main__":

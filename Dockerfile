@@ -17,6 +17,6 @@ RUN apt-get update
 # # Debugging
 # RUN apt-get install -y vim 
 
-RUN pip install -r transformers
+RUN pip install transformers
 
 ENTRYPOINT ["python3", "main.py"]

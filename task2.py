@@ -29,14 +29,13 @@ class ReceiptAttentionModel(torch.nn.Module):
         ) # NOTE Weighted fixed-length embeddings
         return weighted_embeddings, attention_weights
 
-def embed_sentences(sentences, isfile=False):
+def classify_recognize(sentences, isfile=False, classify=True, recognize=True):
     # params
     text = [sentences]
     if isfile:
         with open(sentences, "r") as f:
             text = [line.strip() for line in f.readlines() if line.strip()]
-    print(f"Sentences: {text}")
-    print()
+    print(f"Sentences: {text}\n")
 
     # Setup models
     model_id = "sentence-transformers/all-MiniLM-L6-v2"
@@ -66,9 +65,8 @@ def embed_sentences(sentences, isfile=False):
         )
         # normailze
         sentence_embeddings = torch.nn.functional.normalize(sentence_embeddings, p=2, dim=1)
-    print()
-    print(f"Embeddings: {sentence_embeddings}")
-    return sentence_embeddings, attention_weights
+    print(f"\nEmbeddings: {sentence_embeddings}")
+    return None
 
 def initialize_receipt_attention(attention_module):
     receipt_keywords = [ # We're pretending these were found through analysis
