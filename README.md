@@ -15,19 +15,20 @@ with these optional arguments:
 For example:
 
 ```bash
-docker build -t fetchML .
-docker run --gpus all --ipc=host -it fetchML receipt1.txt -f -sc -sa
+docker build -t fetchml .
+docker run --gpus all --ipc=host -it fetchml receipt1.txt -f -s -n
 ```
 `-it` is optional, but it allows you to see the `stdout` before the program terminates. 
 
 ## Explanations
 ### Task 1: Sentence Transformer Implementation
-I figured Fetch might appreciate something built on the concept of scanning receipts, so I developed a fixed-length sentence embedder with a `ReceiptAttention` attention module. It's developed with two metrics in mind. The first is a keyword similarity metric for developers to input words they want `attention` focused on, and the second is a neural network so the model can learn its own complex patterns. 
+Ex:
+I figured Fetch might appreciate something built on the concept of scanning receipts, so I developed a fixed-length sentence embedder with a `ReceiptAttentionModel` model. It's developed with two metrics in mind. The first is a keyword similarity metric for developers to input words they want `attention` focused on, and the second is a neural network so the model can learn its own complex patterns. 
 
-`ReceiptAttention` is initialized as so:
+`ReceiptAttentionModel` is initialized as so:
 ```Python
 def __init__(self, hidden_size):
-    super(ReceiptAttention, self).__init__()
+    super(ReceiptAttentionModel, self).__init__()
     # learnable query vector
     self.query = torch.nn.Parameter(torch.randn(hidden_size))
     # refine attention weights

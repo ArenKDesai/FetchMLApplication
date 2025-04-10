@@ -1,9 +1,9 @@
 from transformers import AutoTokenizer, AutoModel
 import torch
 
-class ReceiptAttention(torch.nn.Module):
+class ReceiptAttentionModel(torch.nn.Module):
     def __init__(self, hidden_size):
-        super(ReceiptAttention, self).__init__()
+        super(ReceiptAttentionModel, self).__init__()
         # learnable query vector
         self.query = torch.nn.Parameter(torch.randn(hidden_size))
         # refine attention weights
@@ -43,7 +43,7 @@ def embed_sentences(sentences, isfile=False):
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModel.from_pretrained(model_id)
     # attention weights
-    attention_module = ReceiptAttention(model.config.hidden_size)
+    attention_module = ReceiptAttentionModel(model.config.hidden_size)
     model.eval()
     attention_module.eval()
     
