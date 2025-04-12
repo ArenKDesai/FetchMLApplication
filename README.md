@@ -76,3 +76,43 @@ Unfortunately, I couldn't get this working quite in time, and I didn't really ha
 
 #### Task 2 Summary
 I decided to keep sentence classification simple with three extra linear layers that follow BERT's backbone, and for named entity recognition I implemented a linear chain CRF that was inspired by the ViBERTgrid model. 
+
+### Task 3: Training Considerations
+#### Freezing
+1. "If the entire network should be frozen"
+
+The entire network should be frozen primarily if the developer is using the model to extract certain features. For example, the model developed for Tasks 1 and 2 could be frozen completely if I just need to use it as a quick and effective embedding generator. 
+
+The network could also be frozen if resources are restricted, such as having a limited dataset or being low in computational power. However, in this case, it may also be better to downgrade to a smaller or more deterministic model without the data or resources to take advantage of a large network. 
+
+Freezing the entire network would disable the improvement of the model, so this should only be done if the model's output is satisfactory and there is no reason to improve it. 
+
+2. "If only the transformer backbone should be frozen"
+
+The transformer backbone should be frozen if the developer is fine-tuning a model for a specific task. Most often, the first 75% of layers can be frozen and only last 25% of layers retrained, and the model will perform substantially better without a significant portion of the training time. 
+
+This means the earlier layers of the model, which typically extract universal features, wouldn't be fine-tuned on the developer's use case. This is usually fine for specific tasks that rely on the later layers, but if the developer is training the model for research or creating a model at a company like Google or Meta, they may want to retrain the entire model. 
+
+3. "If only one of the task-specific heads (either for Task A or Task B) should be frozen"
+
+Task-specific heads can be frozen if the developer wants to limit the speed of the model's inference, and doesn't always need some of the outputs. For example, if I wanted to classify a receipt to belonging from a certain merchant category but I wanted a quick, easy output that didn't care about named entities (or if I wanted to test the output of my sentence classifier without relying on the NER), I could freeze the NER head. 
+
+This could throw off the trainig of the model if it learns to stop using the output of specific heads of the model, so this should only be done for inference. However, this could be useful for testing. 
+
+#### Transfer Learning
+
+1. "The choice of a pre-trained model"
+
+Pre-trained models are effective most of the time. Models like BERT can be used and modified with one extra layer, like BERTgrid models, for significant improvements on the model output for specific use cases. I would research pretrained models for my specific use case and test my GPU architecture to see what models I can handle. Then, I would analyze the architecture of my pretrained model and decide what layers I need to add or modify.
+
+2. "The layers you would freeze/unfreeze"
+
+If I have strong GPUs or a good cluster, I would probably test the output of the pretrained model in total as a baseline. However, for actual development, I would freeze the first 75% of layers for fine-tuning, and if the output of the model is unsatisfactory, I might try unfreezeing some of the later layers. 
+
+3. "The rationale behind these choices"
+
+For my case, I used BERT, which was typically a conversional, general model. My model isn't a generative model, though, so I would probably retrain more than the last 25% of layers. 
+
+Freezing the earlier layers of a model would typically also help avoid catastrophic forgetting. This may not be a problem while using BERT, but if I were using a pretrained version of ViBERTgrid, I may want to keep some of those layers frozen so it doesn't forget how to utilize layout information. 
+
+### Task 4: Training Loop Implementation
