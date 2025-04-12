@@ -21,7 +21,7 @@ def main():
 
     # Task 2
     print("\n\n    ----    TASK 2    ----    ")
-    _ = classify_recognize(args.sentence, args.file, args.sentence_classification, args.named_entity_recognition)
+    results = classify_recognize(args.sentence, args.file, args.sentence_classification, args.named_entity_recognition)
 
 if __name__ == "__main__":
     main()

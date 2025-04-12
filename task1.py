@@ -34,7 +34,7 @@ def embed_sentences(sentences, isfile=False):
     text = [sentences]
     if isfile:
         with open(sentences, "r") as f:
-            text = [line.strip() for line in f.readlines() if line.strip()]
+            text = [f.read()]
     print(f"Sentences: {text}")
     print()
 

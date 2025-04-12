@@ -6,7 +6,7 @@ The dockerfile can be run like so:
 
 with these optional arguments:
 * -f --file
-    * the sentence you passed was a filename. Iterates through the files separated by newline (\n)
+    * the sentence you passed was a filename. The contents of the file is considered a sentence. 
 * -s --sentence-classification 
     * performs sentence classification
 * -n --named-entity-recognition
@@ -16,9 +16,10 @@ For example:
 
 ```bash
 docker build -t fetchml .
-docker run --gpus all --ipc=host -it fetchml receipt1.txt -f -s -n
+docker run --gpus all --ipc=host --runtime=nvidia -it fetchml receipt1.txt -f -s -n
 ```
-`-it` is optional, but it allows you to see the `stdout` before the program terminates. 
+
+NOTE: This assumes you have the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html) installed. If not, remove `--runtime=nvidia`. 
 
 ## Explanations
 ### Task 1: Sentence Transformer Implementation
@@ -65,3 +66,13 @@ The rest is filtering out padding tokens and converting scores into weights indi
 **NOTE**: The model currently doesn't actually train the attention module on keywords (see `initialize_receipt_attention` on line 73 of `task1.py`). This would've been a nice touch, but the document specifies that training isn't a requirement, and I already spent too much time trying to figure out why the NVIDIA contianer toolkit wasn't working on my laptop!
 
 ### Task 2: Multi-Task Learning Expansion
+
+#### Part A: Sentence Classification
+I decided to concatenate three layers --- one for keyword detection, one for instance count, and one for layout --- that follows BERT's backbone with LayerNorm and GELU. I chose to target receipts as my case study, and the classification of those receipts is limited to "grocery", "restaurant", or "retail". I think building a more complex system may be beneficial for an unsupervisted task or if I were trying to categorize these receipts into a much broader vocabulary, but for this case, a simple model would be the fastest, easiest to maintain, and still effective. 
+
+#### Part B: Named Entity Recognition
+Admittedly, I've never done NER before. I referred to 2023 paper [Comprehensive Overview of Named Entity Recognition: Models, Domain-Specific Applications and Challenges](https://arxiv.org/abs/2309.14084) by Kalyani Pakhale. The paper referenced a BERTgrid model called ViBERTgrid introduced in a previous 2021 paper, [ViBERTgrid: A Jointly Trained Multi-Modal 2D Document Representation for Key Information Extraction from Documents](https://arxiv.org/abs/2105.11672) by Lin et al. The ViBERTgrid model captures textual and layout information well with a joint training strategy with a CNN, and I figured it would be a great fit for this project. 
+Unfortunately, I couldn't get this working quite in time, and I didn't really have the training data anyways. The ViBERTgrid model is what I would implement with more time...but for this project, I decided to take a supervised learning approach and implemented a linear chain CRF. I don't have the training data to train it, but this approach was relitively simple and, in my experience, suprisingly effective. 
+
+#### Task 2 Summary
+I decided to keep sentence classification simple with three extra linear layers that follow BERT's backbone, and for named entity recognition I implemented a linear chain CRF that was inspired by the ViBERTgrid model. 

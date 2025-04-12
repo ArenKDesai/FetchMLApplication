@@ -17,6 +17,7 @@ RUN apt-get update
 # # Debugging
 # RUN apt-get install -y vim 
 
-RUN pip install transformers
+RUN pip install transformers\
+    pytorch-crf
 
 ENTRYPOINT ["python3", "main.py"]
