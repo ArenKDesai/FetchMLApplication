@@ -14,9 +14,6 @@ COPY . /workspace
 
 RUN apt-get update 
 
-# # Debugging
-# RUN apt-get install -y vim 
-
 RUN pip install transformers\
     pytorch-crf
 

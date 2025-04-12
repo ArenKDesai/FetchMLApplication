@@ -17,7 +17,7 @@ For example:
 ```bash
 docker build -t fetchml .
 docker run --gpus all --ipc=host --runtime=nvidia -it fetchml receipt1.txt -f -s -n
-```
+``` 
 
 NOTE: This assumes you have the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html) installed. If not, remove `--runtime=nvidia`. 
 
@@ -116,3 +116,6 @@ For my case, I used BERT, which was typically a conversional, general model. My 
 Freezing the earlier layers of a model would typically also help avoid catastrophic forgetting. This may not be a problem while using BERT, but if I were using a pretrained version of ViBERTgrid, I may want to keep some of those layers frozen so it doesn't forget how to utilize layout information. 
 
 ### Task 4: Training Loop Implementation
+I stuck with the standards for a BERTgrid implementation, but I combined the loss between both heads (sentence classification and NER) because I wanted to convince the model to rely on the outputs of both --- the identification of named entities could benefit the classification of a receipt greatly. This does mean that I would almost always want both heads unfrozen during training, but the model isn't very large, so this shouldn't be an issue. 
+
+This model is also text-based, so I might have to use a CV model to identify text on receipts and load them into files. 

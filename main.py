@@ -4,7 +4,7 @@ from task1 import embed_sentences
 from task2 import classify_recognize
 
 def main():
-    # Arguments
+    # args
     parser = argparse.ArgumentParser()
     parser.add_argument('sentence', type=str, help='sentence for encoder (req)')
     parser.add_argument('-f', '--file', action='store_true', 
@@ -24,4 +24,4 @@ def main():
     results = classify_recognize(args.sentence, args.file, args.sentence_classification, args.named_entity_recognition)
 
 if __name__ == "__main__":
-    main()
+    main() 

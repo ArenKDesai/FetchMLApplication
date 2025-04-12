@@ -14,5 +14,5 @@ Tax (8.875%):           $1.82
 Total:                 $22.33
 --------------------
 PAID: Credit Card *1234
-THANK YOU FOR SHOPPING!
+THANK YOU FOR SHOPPING! 
 Receipt #: GM-45678

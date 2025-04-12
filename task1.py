@@ -59,7 +59,7 @@ def embed_sentences(sentences, isfile=False):
     # embeddings
     with torch.no_grad():
         model_output = model(**encoded_input)
-        # Apply attention weights to embeddings
+        # apply attention weights to embeddings
         sentence_embeddings, attention_weights = attention_module(
             model_output.last_hidden_state, 
             encoded_input['attention_mask']

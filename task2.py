@@ -197,7 +197,7 @@ def classify_recognize(sentences, isfile=False, do_classification=True, do_ner=T
             text = [f.read()]
     
     receipt_classes = ["grocery", "restaurant", "retail"]
-    ner_tags = ["O", # outside
+    ner_tags = ["O", 
                 "B-PRODUCT", "I-PRODUCT", 
                 "B-PRICE", "I-PRICE", 
                 "B-DATE", "I-DATE", 
